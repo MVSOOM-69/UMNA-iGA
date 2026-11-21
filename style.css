@@ -795,3 +795,36 @@ button {
     transition-duration: .01ms !important;
   }
       }
+
+/* SCROLL REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.legacy-card:nth-child(2) {
+  transition-delay: .1s;
+}
+
+.legacy-card:nth-child(3) {
+  transition-delay: .2s;
+}
+
+.legacy-card:nth-child(4) {
+  transition-delay: .3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
