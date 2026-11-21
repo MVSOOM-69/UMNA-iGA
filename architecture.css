@@ -1,2 +1,255 @@
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="architecture.css">
+
+/* ==========================================
+   UMNA-İGA
+   ISLAMIC ARCHITECTURAL EXPERIENCE
+   ========================================== */
+
+:root {
+  --arch-gold: #b3945b;
+  --arch-light: #d8c397;
+  --arch-green: #123f35;
+  --arch-dark: #071b16;
+}
+
+/* ARCHITECTURAL HERO */
+
+.hero {
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 8%;
+  top: 17%;
+  width: min(34vw, 430px);
+  height: 65%;
+  border: 1px solid #b3945b65;
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+  opacity: .8;
+  box-shadow:
+    0 0 0 12px #b3945b08,
+    0 0 0 25px #b3945b08,
+    inset 0 0 70px #b3945b0a;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 11%;
+  top: 20%;
+  width: min(28vw, 360px);
+  height: 61%;
+  border: 1px solid #d8c39740;
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+}
+
+/* ARCHITECTURAL GRID */
+
+.hero-overlay {
+  background-image:
+    linear-gradient(90deg, #071b16 0%, #071b16e8 37%, #071b1670 75%, #071b1630 100%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 48px,
+      #d8c39705 49px,
+      transparent 50px
+    );
+}
+
+/* ORNAMENTAL DIVIDERS */
+
+.intro-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-section::before,
+.intro-section::after {
+  content: "✧";
+  position: absolute;
+  color: #b3945b;
+  font-size: 30px;
+  opacity: .45;
+}
+
+.intro-section::before {
+  top: 45px;
+  right: 8%;
+}
+
+.intro-section::after {
+  bottom: 40px;
+  left: 8%;
+}
+
+/* GEOMETRIC LEGACY CARDS */
+
+.legacy-card {
+  isolation: isolate;
+}
+
+.legacy-card::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid #b3945b20;
+  pointer-events: none;
+  z-index: -1;
+  transition: .4s;
+}
+
+.legacy-card:hover::after {
+  inset: 7px;
+  border-color: #b3945b75;
+}
+
+/* ARCHITECTURAL SECTION DETAILS */
+
+.legacy-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.legacy-section::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border: 1px solid #b3945b12;
+  border-radius: 50%;
+  top: 10%;
+  left: -300px;
+  box-shadow:
+    0 0 0 25px #b3945b05,
+    0 0 0 50px #b3945b05;
+  pointer-events: none;
+}
+
+.legacy-section::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border: 1px solid #b3945b12;
+  border-radius: 50%;
+  bottom: 0;
+  right: -300px;
+  box-shadow:
+    0 0 0 25px #b3945b05,
+    0 0 0 50px #b3945b05;
+  pointer-events: none;
+}
+
+/* GOLDEN ARCH ACCENTS */
+
+.programme-section {
+  border-top: 1px solid #b3945b45;
+  border-bottom: 1px solid #b3945b45;
+}
+
+.programme-content {
+  position: relative;
+}
+
+.programme-content::before {
+  content: "✧";
+  display: block;
+  font-size: 25px;
+  color: var(--arch-gold);
+  margin-bottom: 25px;
+}
+
+/* FOOTER ORNAMENT */
+
+.footer {
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--arch-gold),
+    transparent
+  );
+}
+
+/* HOVER DETAILS */
+
+.button-primary,
+.button-secondary {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    #ffffff45 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform .6s;
+}
+
+.button-primary:hover::after {
+  transform: translateX(120%);
+}
+
+/* MOBILE ARCHITECTURE */
+
+@media (max-width: 650px) {
+
+  .hero::before {
+    width: 75vw;
+    height: 45%;
+    right: -15%;
+    top: 25%;
+    opacity: .35;
+  }
+
+  .hero::after {
+    width: 67vw;
+    height: 42%;
+    right: -11%;
+    top: 27%;
+    opacity: .3;
+  }
+
+  .legacy-section::before,
+  .legacy-section::after {
+    opacity: .4;
+  }
+
+  .intro-section::before {
+    right: 7%;
+    top: 25px;
+  }
+
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after,
+  .legacy-card::after {
+    transition: none;
+  }
+}
